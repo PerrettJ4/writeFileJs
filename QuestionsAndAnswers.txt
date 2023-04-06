@@ -1,0 +1,36 @@
+Note: I changed some of the Postcode Areas, as they were all unique and I wanted to be able to group them and work out an average price per area.
+
+Questions
+
+•	If this application were to become a business-critical application, what do you think you would need to improve / focus on next?
+
+1. First, I would focus on creating unit tests for all functions, to double check the logic & for maintainability.
+
+2. I would then export the function getHouseResults for re-usability.
+
+3. I would try Interface the CSV to JSON converter file and House_Results file to cut time losses in the event of repeated use. 
+
+4. The current output is lengthy and well... in node. Some UI & formatting to display the information in a more digestible manner would be nice. I would most likely create a React App for this, with a simple table that can be filtered, sorted and searched.
+
+5. Again it's quite difficult to analyse the results. The implementation of Line/Bar graphs, Bubble graphs or even a price-by-area Heat map would help humans spot trends and outliers within the UK. 
+
+6. In regard to most expensive/cheapest lists - I would implement a slider to limit the number of results. This is just another UI component for filtering the table.
+
+7. Finally, more data! Number of bedrooms, land per sqft, Property age, Property type etc... will all influence sold price greatly. With this data we will be able to interrogate the sold price by area in more depth. i.e. price per sqft in London, or price per bedroom in Liverpool. Then we can start to make better comparisons between cities, areas and houses. Because currently, without this extra information, it is difficult to compare directly.
+
+
+
+•	What other “interesting” things do you think you could do with this data?
+
+1. There is a lot of talk about AI systems, and I would need a lot of time and a LOT more data. However, a supervised machine learning method to predict house prices based on independent variables is definitely feasible. These variables such as local population demographic, weather, local crime, property crime, selling history, planning permission, planning history, Transport Networks and so on can be accessed with the current data. With this amount of data a Neural Net would be the likely choice of supervised system, which I would code in Python. Theoretically, with an accurate model and some human intuition you can profit off buying and selling houses which appear grossly undervalued. 
+
+2. As stated before I believe that with the Postcode data I can access a pool of more data. Brief research online shows property APIs with comprehensive data at great cost. However, there are methods of accessing some of this data for free. e.g. Crime stats by lat,long are available for free at https://data.police.uk, and I know an API which can locate all sports facilities by distance using lat & long, for free. Upon collating as much of this data as possible, I can populate tables in Postgres, Heroku or Serverless. Creating a fully restful API with all CRUD routes. 
+
+3. Using Lat and Long coordinates and CSS grid I can map out price/price per sqft/price per bedroom as a heat map. Mapping each colour keyed Postcode Area to a lat, long co-ordinate.
+
+4. Using libraries I could Graph sold price history to see price growth by Area. This may illustrate urbanisation. Again a heat map of price growth over time would be cool. Perhaps a dynamic animation through time as well, this could be done using CSS keyframes and some clever JS.
+
+5. I can deploy a React app for desktop or mobile which lists all 50 houses as tiles (with images), we can search, filter and sort these tiles by any variable. Clicking on a tile would then show greater information about that house or area. Using the 'tiles' or 'cards' we could then show direct comparisons between two or more of the houses or areas. Essentially Top Trumps, but for houses and post code areas. With stats like avg sqft, avg crimes, avg price, population density, avg house age, avg temp, council tax, renewable energy use, number of local schools etc... :D Estate Agents could log in to this service and add houses to any personal lists that they wish, for later referall... This may help them identify potential options for clients. I'm not sure what this application is but it sounds like a place for estate agents to play Top Trumps. 
+
+
+
